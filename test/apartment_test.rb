@@ -23,5 +23,6 @@ class ApartmentTest < Minitest::Test
 
     unit1.add_renter(renter1)
     assert_equal renter1, unit1.renter
+    assert_equal "Jessie", unit1.renter.name
   end
 end
