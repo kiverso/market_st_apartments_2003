@@ -34,6 +34,9 @@ class Building
 
   def units_by_number_of_bedrooms
   bedrooms = units.group_by{|unit| unit.bedrooms}
+  bedrooms.map do |key, value|
+    [key, value.map{|value| value.number}]
+  end.to_h
   end
 
 end
