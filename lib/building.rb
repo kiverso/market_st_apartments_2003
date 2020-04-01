@@ -39,4 +39,23 @@ class Building
   end.to_h
   end
 
+  def annual_rent(renter)
+
+  end
+
+  def annual_breakdown
+    breakdown = Hash.new
+    rented_units.each do |unit|
+      breakdown[unit.renter.name] = unit.annual_rent
+    end
+    breakdown
+  end
+
+  def rooms_by_renter
+    rooms = Hash.new
+    rented_units.each do |unit|
+      rooms[unit.renter] = unit.bed_and_bath
+    end
+    rooms
+  end
 end

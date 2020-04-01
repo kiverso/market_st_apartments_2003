@@ -15,4 +15,15 @@ class Apartment
   def add_renter(renter)
     @renter = renter
   end
+
+  def annual_rent
+    monthly_rent * 12
+  end
+
+  def bed_and_bath
+    details = Hash.new
+    details[:bedrooms] = @bedrooms
+    details[:bathrooms] = @bathrooms
+    details
+  end
 end
